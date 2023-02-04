@@ -23,14 +23,14 @@ app.use(cors({
     credentials: true,
 }));
 
-const whitelist = ['https://localhost:3000', 'http://localhost:3000', 'https://mangrove-research.vercel.app/']
+const whitelist = ['https://localhost:3000', 'http://localhost:3000', 'https://mangrove-research.vercel.app/', 'https://mangrove-research.vercel.app']
 
 app.use(function (req, res, next) {
     let currentOrigin = req.headers.origin;
     if (whitelist.indexOf(currentOrigin) > -1) {
         origin = theOrigin;
     } else {
-        origin = 'https://mangrove-research.vercel.app/';
+        origin = 'https://mangrove-research.vercel.app';
     }
     res.header('Access-Control-Allow-Origin', origin);
     res.header('Access-Control-Allow-Methods', "GET, POST, OPTIONS, PUT, DELETE");
