@@ -28,7 +28,7 @@ const whitelist = ['https://localhost:3000', 'http://localhost:3000', 'https://m
 app.use(function (req, res, next) {
     let currentOrigin = req.headers.origin;
     if (whitelist.indexOf(currentOrigin) > -1) {
-        origin = theOrigin;
+        origin = currentOrigin;
     } else {
         origin = 'https://mangrove-research.vercel.app';
     }
